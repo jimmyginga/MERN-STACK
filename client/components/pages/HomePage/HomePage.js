@@ -31,7 +31,7 @@ export default function HomePage() {
           </div>
           <div className="right">
             <h1 className="my-title">
-              Hi, welcome, do you want to work now?
+              hi, welcome, do you want to work now?
             </h1>
             <p>press on &quot;new task&quot; and enjoy</p>
             <button className="my-btn-outline" type="button">
