@@ -3,13 +3,15 @@ module.exports = {
   root: true,
   extends: 'airbnb-base',
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 8,
     sourceType: "module",
     allowImportExportEverywhere: false,
   },
+ 
   env: {
     node: true,
-    jest: true
+    jest: true,
+    es6: true,
   },
   rules: {
     // override defaults
