@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
+import { Link } from 'react-router-dom';
 import R from 'ramda';
 
 import Section from 'react-bulma-companion/lib/Section';
 import Container from 'react-bulma-companion/lib/Container';
-import Title from 'react-bulma-companion/lib/Title';
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -18,16 +18,23 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="home-page page">
+    <div className="page">
       <Section>
-        <Container>
+        <Container className="banner-container">
           <div className="left">
-            <img src={} alt="" classNAme="banner-img"/>
+            <img
+              // eslint-disable-next-line global-require
+              src={require('../../../assets/images/home-img.png').default}
+              alt=""
+              className="banner-img"
+            />
           </div>
           <div className="right">
-            <h1>organize your tasks and execute them in priority order</h1>
-            <p>press on "new task" and enjoy</p>
-            <button className="my-btn">
+            <h1 className="my-title">
+              Hi, welcome, do you want to work now?
+            </h1>
+            <p>press on &quot;new task&quot; and enjoy</p>
+            <button className="my-btn-outline" type="button">
               <Link to="/todo">new task</Link>
             </button>
           </div>

@@ -24,20 +24,30 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks'],
   rules: {
+    'operator-linebreak': [
+      2,
+      'after',
+      { overrides: { '?': 'after', '+=': 'none' } },
+    ],
     // enable rules
     'react/jsx-key': 2,
 
     // override default options for rules from base configurations
-    'eqeqeq': [2, 'smart'],
-    'max-len': [2, { 'code': 120, 'tabWidth': 2, 'ignoreUrls': true }],
-    'newline-per-chained-call': [2, { 'ignoreChainWithDepth': 4 }],
+    eqeqeq: [2, 'smart'],
+    'max-len': [2, { code: 120, tabWidth: 2, ignoreUrls: true }],
+    'newline-per-chained-call': [2, { ignoreChainWithDepth: 4 }],
     'no-cond-assign': [2, 'except-parens'],
-    'no-multi-spaces': [2, {'exceptions': {
-      'ImportDeclaration': true,
-      'Property': true,
-      'VariableDeclarator': true
-    }}],
-    'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx'] }],
+    'no-multi-spaces': [
+      2,
+      {
+        exceptions: {
+          ImportDeclaration: true,
+          Property: true,
+          VariableDeclarator: true,
+        },
+      },
+    ],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
     'react/jsx-fragments': [2, 'element'],
 
     // disable rules

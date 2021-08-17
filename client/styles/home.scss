@@ -1,3 +1,57 @@
-.home-page {
-  text-align: center;
+.banner-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right{
+  text-align: left;
+  margin-left: 100px;
+}
+.banner-img{
+  width: 90%;
+}
+.my-title{
+  font-size: 30pt;
+  max-width: 400px;
+  color: $grey;
+  text-align: left;
+}
+.my-btn, .my-btn-secondary{
+  color: $white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: solid 2px $btn-primary;
+  background: $btn-primary;  
+  transition: all .5s;
+}
+.my-btn-secondary{
+  color: $primary;
+}
+.my-btn-outline{
+  color: $white;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: solid 3px $btn-primary;
+  background: none;  
+  transition: all .5s;
+}
+.my-btn:hover{
+  transition: all .5s;
+  color: $btn-primary;
+  border-radius: 5px;
+  padding: 5px 20px;
+  border: solid 3px $btn-primary;
+  background: $white;
+  
+}
+.my-btn-outline:hover{
+  transition: all .5s;
+  border: solid 3px $btn-primary;
+  color: $grey;
+}
+.my-btn a{
+  color: $white;
 }

@@ -52,18 +52,11 @@ userSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-userSchema.methods.hashPassword = function() {
-  return new Promise((resolve, reject) => {
-    bcrypt.genSalt(10, (err1, salt) => {
-      if (err1) { reject(err1); }
-      bcrypt.hash(this.password, salt, (err2, hash) => {
-        if (err2) { reject(err2); }
-        this.password = hash;
-        resolve(hash);
-      });
-    });
-  });
-};
+userSchema.pre('save', async(next) => {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+  next();
+});
 
 userSchema.methods.hidePassword = function() {
   return R.omit(['password', '_id'], this.toObject({ virtuals: true }));

@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -26,17 +26,14 @@ export default function Navigation({ pathname }) {
 
   const closeDropdown = () => setOpen(false);
 
-  const isHome = (pathname.length === 5)
-    ? pathname === '/home'
-    : R.slice(0, 6, pathname) === '/home/';
+  const isHome =
+    pathname.length === 5 ? pathname === '/home' : R.slice(0, 6, pathname) === '/home/';
 
-  const isTodo = (pathname.length === 5)
-    ? pathname === '/todo'
-    : R.slice(0, 6, pathname) === '/todo/';
+  const isTodo =
+    pathname.length === 5 ? pathname === '/todo' : R.slice(0, 6, pathname) === '/todo/';
 
-  const isSettings = (pathname.length === 9)
-    ? pathname === '/settings'
-    : R.slice(0, 10, pathname) === '/settings/';
+  const isSettings =
+    pathname.length === 9 ? pathname === '/settings' : R.slice(0, 10, pathname) === '/settings/';
 
   return (
     <Navbar fixed="top" shadow>
@@ -58,9 +55,7 @@ export default function Navigation({ pathname }) {
                 to="/login"
                 component={Link}
               >
-                <Title size="6">
-                  Login
-                </Title>
+                <Title size="6">Login</Title>
               </Navbar.Item>
             )}
             {!auth && (
@@ -69,7 +64,9 @@ export default function Navigation({ pathname }) {
                 to="/register"
                 component={Link}
               >
-                <Button color="success">Sign Up</Button>
+                <Button className="my-btn">
+                  Sign Up
+                </Button>
               </Navbar.Item>
             )}
             {auth && (
@@ -111,9 +108,7 @@ export default function Navigation({ pathname }) {
                 tab
                 component={Link}
               >
-                <Title size="6">
-                  Todo
-                </Title>
+                <Title size="6">Todo</Title>
               </Navbar.Item>
               <Navbar.Item
                 className="is-hidden-mobile"
@@ -122,13 +117,16 @@ export default function Navigation({ pathname }) {
                 tab
                 component={Link}
               >
-                <Title size="6">
-                  Settings
-                </Title>
+                <Title size="6">Settings</Title>
               </Navbar.Item>
             </Navbar.Start>
             <Navbar.End>
-              <Navbar.Item onClick={toggleDropdown} onKeyPress={toggleDropdown} hoverable component="a">
+              <Navbar.Item
+                onClick={toggleDropdown}
+                onKeyPress={toggleDropdown}
+                hoverable
+                component="a"
+              >
                 <Image size="32x32">
                   <Image.Content
                     className="profile-img"
@@ -143,12 +141,10 @@ export default function Navigation({ pathname }) {
           <Navbar.Menu>
             <Navbar.End>
               <Navbar.Item to="/login" component={Link}>
-                <Title size="6">
-                  Login
-                </Title>
+                <Button className="my-btn-outline">Login</Button>
               </Navbar.Item>
               <Navbar.Item to="/register" component={Link}>
-                <Button color="success">Sign Up</Button>
+                <Button className="my-btn">Sign Up</Button>
               </Navbar.Item>
             </Navbar.End>
           </Navbar.Menu>

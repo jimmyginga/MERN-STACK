@@ -162,7 +162,7 @@ export default function Register() {
       </Field>
       <hr className="separator" />
       <div className="has-text-right">
-        <Button color="success" onClick={register} disabled={!passwordValid || !usernameAvailable}>
+        <Button className="my-btn-secondary" onClick={register} disabled={!passwordValid || !usernameAvailable}>
           Create Account
         </Button>
       </div>
