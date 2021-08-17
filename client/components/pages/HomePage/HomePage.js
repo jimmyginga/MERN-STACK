@@ -21,9 +21,16 @@ export default function HomePage() {
     <div className="home-page page">
       <Section>
         <Container>
-          <Title size="1">
-            Home Page
-          </Title>
+          <div className="left">
+            <img src={} alt="" classNAme="banner-img"/>
+          </div>
+          <div className="right">
+            <h1>organize your tasks and execute them in priority order</h1>
+            <p>press on "new task" and enjoy</p>
+            <button className="my-btn">
+              <Link to="/todo">new task</Link>
+            </button>
+          </div>
         </Container>
       </Section>
     </div>
